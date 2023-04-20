@@ -6,6 +6,9 @@
 /* 
 
 - user_id
+- first name
+- last name
+- email
 - username_id
 - password_id
 - foreign cart_id
@@ -41,6 +44,9 @@ exports.up = function (knex) {
       .references("wishlist_id")
       .inTable("wishlists")
       .onDelete("cascade");
+    table.string("first_name");
+    table.string("last_name");
+    table.string("email");
     table.timestamps(true, true);
   });
 };
